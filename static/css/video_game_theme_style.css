@@ -1,0 +1,166 @@
+/* static/css/style.css */
+
+/* --- Base & Typography --- */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #fca311;
+    text-shadow: 2px 2px #e63946;
+    margin-bottom: 3rem;
+}
+
+/* --- Header Screen --- */
+.screen-container {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    padding: 1rem;
+    border: 3px solid #4a4a4a;
+    margin-bottom: 3rem;
+}
+.screen {
+    background-color: #0c1a0c;
+    color: #33ff33;
+    min-height: 150px;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 2px solid #33ff3340;
+    box-shadow: inset 0 0 15px #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.screen-text {
+    white-space: pre-wrap;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33;
+}
+.cursor {
+    display: inline-block;
+    width: 12px;
+    height: 1.5rem;
+    background-color: #33ff33;
+    animation: blink 1s step-end infinite;
+    box-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33;
+    vertical-align: bottom;
+}
+@keyframes blink {
+    from, to { background-color: transparent; box-shadow: none; }
+    50% { background-color: #33ff33; box-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33; }
+}
+
+/* --- Game Cards --- */
+.game-card {
+    background-color: #2a2a2a;
+    border: 4px solid #4a4a4a;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #fca31180;
+}
+.game-card.past {
+    filter: grayscale(80%);
+    opacity: 0.7;
+}
+.game-card-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 4px solid #4a4a4a;
+    image-rendering: pixelated;
+}
+
+/* --- Buttons --- */
+.game-button {
+    background-color: #e63946;
+    color: white;
+    padding: 0.8rem 1rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border: 2px solid #4a4a4a;
+    box-shadow: 4px 4px 0px #4a4a4a;
+    transition: all 0.1s ease-in-out;
+}
+.game-button:hover {
+    background-color: #fca311;
+}
+.game-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+/* --- Modals --- */
+.game-modal {
+    background-color: #2a2a2a;
+    border: 4px solid #4a4a4a;
+    width: 100%;
+    max-width: 500px;
+}
+.game-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    background-color: #e63946;
+    color: white;
+    font-size: 1.2rem;
+}
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.game-input {
+    width: 100%;
+    background-color: #1a1a1a;
+    border: 2px solid #4a4a4a;
+    color: #33ff33;
+    padding: 0.8rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+}
+.game-input:focus {
+    outline: none;
+    border-color: #fca311;
+}
+
+/* --- Notifications (Flash Messages) --- */
+.game-notification-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.game-notification {
+    padding: 1rem;
+    border: 3px solid;
+    font-size: 0.8rem;
+}
+.category-success { border-color: #33ff33; background-color: #0c1a0c; color: #33ff33; }
+.category-warning { border-color: #fca311; background-color: #2a2a2a; color: #fca311; }
+.category-error { border-color: #e63946; background-color: #2a2a2a; color: #e63946; }
+
