@@ -1,59 +1,60 @@
-Name,Item,Note
-Natasha Cheung,Salt,
-Anjali,Pepper,
-Michael,VC,manual
-Shreya Shekhar,Founder,manual
-Hanson,Macaroni,
-Anthony,Cheese,
-Alexandra Li,Fish,
-Vedang Lad,Chips,
-Sadena Rishindran,Bacon,
-Somya,Eggs,
-Archika Dogra,Romeo,
-Erwin,Juliet,
-ansh,Batman,manual
-galen,Robin,manual
-Patrick Liu,Sherlock,
-ashwit,Watson,
-Stephen Ip,Tom,
-Nick,Jerry,
-Tarun,Bonnie,
-Timmy Dang,Clyde,
-Zachary Zhang,Yin,
-Gray Kim,Yang,
-Tia Chang,Pen,
-Connor,Paper,
-Gina,Lock,manual
-Rachel Lau,Key,manual
-Vamshi,Hammer,
-Abby,Nail,
-Luv Goyal,Bow,
-Ben Mathew,Arrow,
-diya hasteer,Cup,manual
-Nimisha,Saucer,manual
-Rohun Baxi,Fork,
-Vivek Vijaykumar,Spoon,
-Elliot,Trader,
-Joseph Tobin,Joe's,
-Shreya Puli,Rock,
-Allison Hartley,Roll,
-Omnia,Black,
-Yash Dani,White,
-Jai Bhatia,Day,manual
-Shrishti Roy,Night,manual
-Dhruv Vaish,War,
-Chloe Chan,Peace,
-Raj,Cause,
-Vikram Kaushik,Effect,
-Jason P,Up,
-Brian Yu,Down,
-jared tating,Hot,
-Theo Fernandez,Cold,
-hope marie,Bread,
-Ashwat,Butter,
-Anirban Sarkar,Gin,
-anusha,Tonic,
-Samyu,Shoes,
-Kedaar Chakankar,Socks,
-luca,Peanut Butter,
-Ali,Jelly,
+name,item
+Ben Mathew,Salt
+Raj,Pepper
+Michael,Peanut Butter
+Vamshi,Jelly
+Archika Dogra,Macaroni
+Connor,Cheese
+Jason P,Fish
+Brian Yu,Chips
+gina,Bacon
+Abby,Eggs
+Patrick Liu,Romeo
+Rohun Baxi,Juliet
+Hanson,Batman
+Erwin,Robin
+Yash Dani,Sherlock
+luca,Watson
+Vikram Kaushik,Ketchup
+ansh,Mustard
+Nick,Bonnie
+Samyu,Clyde
+Vivek Vijaykumar,Yin
+Anthony,Yang
+diya hasteer,Pen
+Nimisha,Paper
+Stephen Ip,Lock
+Allison Hartley,Key
+Shrishti Roy,Hammer
+Omnia,Nail
+Elliot,Bow
+Shreya Puli,Arrow
+Christina,Cup
+Joseph Tobin,Saucer
+Timmy Dang,Fork
+Luv Goyal,Spoon
+Vedang Lad,Shoes (you're in a group of 3)
+Tia Chang,Feet (you're in a group of 3)
+Anjali,Socks (you're in a group of 3)
+ashwit,Rock
+galen,Roll
+Sadena Rishindran,Black
+Zora,White
+Chloe Chan,Day
+Jack Muraika,Night
+Samrit Mathur,War
+Somya,Peace
+Natasha Cheung,Right
+Dhruv Vaish,Left
+Shreya Shekhar,Up
+Allen,Down
+Ali,Hot
+Paul,Cold
+Tarun,Bread
+Zachary Zhang,Butter
+Rachel Lau,Gin
+Alexandra Li,Tonic
+Jared,Nuts
+Ashwat,Bolts
+hope marie,King
+Oliver,Queen
