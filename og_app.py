@@ -15,7 +15,8 @@ events = [
         "title": "Housewarming",
         "date": "August 16, 2025",
         "description": "Celebrate our new home with us! Drinks, snacks, and good company await.",
-        "image_url": "https://placehold.co/600x400/f472b6/ffffff?text=Housewarming",
+        "image_url": "https://i.guim.co.uk/img/media/908edfd0eb30a60f9cdd73a936b6a36b60d67681/0_130_2150_1290/master/2150.jpg?width=1900&dpr=2&s=none&crop=none",
+#        "image_url": "https://placehold.co/600x400/f472b6/ffffff?text=Housewarming",
         "lookup_item": "housewarming" # Used to show the lookup button for this event
     },
 ]

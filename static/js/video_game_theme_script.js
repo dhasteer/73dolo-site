@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Typing Animation for Header ---
     const headerTextElement = document.getElementById('header-text');
     if (headerTextElement) {
-        const textToType = `OUR HOME EVENTS\n\nPLAYER 1 PRESS START`;
+        const textToType = `73 DOLO EVENTS`;
         let charIndex = 0;
 
         function typeHeaderText() {

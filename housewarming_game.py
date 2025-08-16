@@ -6,8 +6,11 @@ import csv
 import json
 
 # --- Game-Specific Configuration ---
-ASSIGNMENTS_FILE = 'assignments.csv'
-STATUS_FILE = 'party_status.json'
+# Get the absolute path of the directory this script is in
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+# Build absolute paths to your data files
+ASSIGNMENTS_FILE = os.path.join(APP_DIR, 'assignments.csv')
+STATUS_FILE = os.path.join(APP_DIR, 'party_status.json')
 HOSTS = ['Divija', 'Claire', 'Rhea']
 
 # --- Core Game Functions ---
