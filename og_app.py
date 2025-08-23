@@ -19,6 +19,14 @@ events = [
 #        "image_url": "https://placehold.co/600x400/f472b6/ffffff?text=Housewarming",
         "lookup_item": "housewarming" # Used to show the lookup button for this event
     },
+    {
+        "title": "WWM Poker Night",
+        "date": "August 23, 2025",
+        "description": "An evening of poker, drinks, and conversation. Buy in for $20.",
+        "image_url": "https://pgt.pokergomedia.com/cdn-cgi/image/fit=contain,width=1280,quality=65/2019/12/dd51c1dc-3jbevg.jpg",
+#        "image_url": "https://placehold.co/600x400/f472b6/ffffff?text=Housewarming",
+        "lookup_item": "" # Used to show the lookup button for this event
+    },
 ]
 
 # --- Main Application Routes ---
