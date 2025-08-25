@@ -1,0 +1,65 @@
+# poker_game.py
+
+from datetime import datetime
+
+# --- Poker Ledger Data ---
+# Storing ledger data in a dictionary. The key is the event's unique_id.
+poker_ledgers = {
+    "poker-2025-08-23": {
+        "title": "WWM Poker Night (Aug 23)",
+        "entries": [
+            {"player": "dh", "buy_in": 20, "cash_out": 50.50, "net": 30.50},
+            {"player": "gk", "buy_in": 40, "cash_out": 49, "net": 9},
+            {"player": "vb", "buy_in": 55, "cash_out": 52.25, "net": -2.75},
+            {"player": "ad", "buy_in": 30, "cash_out": 0, "net": -30},
+            {"player": "ws", "buy_in": 20, "cash_out": 11.50, "net": -8.50},
+            {"player": "rg", "buy_in": 20, "cash_out": 18.25, "net": -1.75},
+            {"player": "ss", "buy_in": 20, "cash_out": 0, "net": -20},
+            {"player": "dn", "buy_in": 20, "cash_out": 43.50, "net": 23.50}
+        ]
+    },
+    # --- Add future poker night ledgers here ---
+    # "poker-2025-09-20": { ... }
+}
+
+
+def get_event_ledger(event_id):
+    """
+    Retrieves and sorts the ledger data for a specific event ID.
+    """
+    ledger = poker_ledgers.get(event_id)
+    if ledger and 'entries' in ledger:
+        # Sort entries by 'net' value, from highest to lowest
+        ledger['entries'] = sorted(ledger['entries'], key=lambda x: x['net'], reverse=True)
+    return ledger
+
+def get_universal_ledger():
+    """
+    Combines all ledger entries into a single, consolidated universal ledger.
+    """
+    all_entries = []
+    for event_id, data in poker_ledgers.items():
+        for entry in data.get('entries', []):
+            event_date = datetime.strptime(event_id.replace("poker-", ""), "%Y-%m-%d").strftime("%b %d, %Y")
+            all_entries.append({**entry, "event": event_date})
+
+    # Consolidate player stats across all games
+    player_summary = {}
+    for entry in all_entries:
+        player = entry['player']
+        if player not in player_summary:
+            player_summary[player] = {'buy_in': 0, 'cash_out': 0, 'net': 0}
+        player_summary[player]['buy_in'] += entry['buy_in']
+        player_summary[player]['cash_out'] += entry['cash_out']
+        player_summary[player]['net'] += entry['net']
+
+    # Convert dictionary to a list of entries for easy rendering
+    summary_entries = [
+        {"player": p, "buy_in": d['buy_in'], "cash_out": d['cash_out'], "net": d['net']}
+        for p, d in player_summary.items()
+    ]
+
+    return {
+        "title": "Universal Ledger",
+        "entries": sorted(summary_entries, key=lambda x: x['net'], reverse=True)
+    }

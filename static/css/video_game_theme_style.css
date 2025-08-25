@@ -148,6 +148,54 @@ body {
     border-color: #fca311;
 }
 
+/* --- Ledger Table & Tabs Styles --- */
+.ledger-tab-nav {
+    display: flex;
+    border-bottom: 4px solid #4a4a4a;
+}
+.ledger-tab {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    padding: 0.8rem 1rem;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.ledger-tab.active {
+    background-color: #2a2a2a;
+    border-bottom: 4px solid #fca311;
+    opacity: 1;
+}
+.ledger-tab-content {
+    display: none;
+}
+.ledger-tab-content.active {
+    display: block;
+}
+
+.ledger-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+.ledger-table th, .ledger-table td {
+    border: 2px solid #4a4a4a;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+}
+.ledger-table th {
+    background-color: #1a1a1a;
+    color: #fca311;
+}
+.ledger-table td {
+    color: #f0f0f0;
+}
+.ledger-table tr:nth-child(even) {
+    background-color: #3a3a3a;
+}
+
 /* --- Notifications (Flash Messages) --- */
 .game-notification-container {
     display: flex;
@@ -163,4 +211,3 @@ body {
 .category-success { border-color: #33ff33; background-color: #0c1a0c; color: #33ff33; }
 .category-warning { border-color: #fca311; background-color: #2a2a2a; color: #fca311; }
 .category-error { border-color: #e63946; background-color: #2a2a2a; color: #e63946; }
-

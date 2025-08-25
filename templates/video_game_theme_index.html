@@ -13,27 +13,11 @@
 <body>
 
     <div class="main-container">
-        <!-- Header Screen -->
         <header class="screen-container">
             <div class="screen">
                 <div id="header-text" class="screen-text"></div>
             </div>
         </header>
-
-        <!-- Flash Messages -->
-        <!-- <div class="container mx-auto px-6">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-            <div class="game-notification-container">
-              {% for category, message in messages %}
-                <div class="game-notification category-{{category}}">
-                  <p>{{ message }}</p>
-                </div>
-              {% endfor %}
-            </div>
-          {% endif %}
-        {% endwith %}
-        </div> -->
 
         <div class="container mx-auto px-6">
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -62,35 +46,33 @@
         {% endwith %}
         </div>
         
-
-        <!-- Main Content -->
         <main class="container mx-auto px-6 py-12">
-            <!-- Upcoming Events Section -->
             <section id="upcoming-events">
                 <h2 class="section-title">Upcoming Events</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {% for event in upcoming_events %}
                     <div class="game-card">
                         <div class="game-card-image" style="background-image: url('{{ event.image_url }}');"></div>
-                        <div class="p-4">
+                        <div class="p-4 flex flex-col flex-grow">
                             <h3 class="text-lg mb-2 text-yellow-300">{{ event.title }}</h3>
                             <p class="text-xs text-cyan-300 mb-3">[ {{ event.date }} ]</p>
                             <p class="text-sm leading-relaxed">{{ event.description }}</p>
+                        
+                            <div class="mt-auto pt-4">
+                                {% if event.lookup_item %}
+                                <button data-modal-toggle="lookup-modal" class="game-button w-full">
+                                    Item Lookup
+                                </button>
+                                {% endif %}
+                            </div>
                         </div>
-                        {% if event.lookup_item %}
-                        <div class="p-4 mt-auto">
-                            <button data-modal-toggle="lookup-modal" class="game-button w-full">
-                                Item Lookup
-                            </button>
-                        </div>
-                        {% endif %}
                     </div>
                     {% else %}
                     <p class="text-center col-span-full">LOADING NEW LEVELS... CHECK BACK SOON!</p>
                     {% endfor %}
                 </div>
             </section>
-            <!-- Past Events Section -->
+            
             <section id="past-events" class="mt-16">
                 <h2 class="section-title">Mission Archives</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -101,6 +83,14 @@
                             <h3 class="text-lg mb-2">{{ event.title }}</h3>
                             <p class="text-xs mb-3">[ {{ event.date }} ]</p>
                             <p class="text-sm leading-relaxed">{{ event.description }}</p>
+                            
+                            <div class="mt-4">
+                                {% if event.unique_id and event.unique_id.startswith('poker-') %}
+                                <button data-modal-toggle="ledger-modal" data-event-id="{{ event.unique_id }}" class="game-button w-full">
+                                    View Ledger
+                                </button>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                     {% else %}
@@ -115,8 +105,6 @@
         </footer>
     </div>
 
-    <!-- MODALS -->
-    <!-- Item Lookup Modal -->
     <div id="lookup-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden">
         <div class="game-modal">
             <div class="game-modal-header">
@@ -132,6 +120,51 @@
                     <button type="submit" class="game-button">SEARCH</button>
                 </div>
             </form>
+        </div>
+    </div>
+    
+    <div id="ledger-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden">
+        <div class="game-modal max-w-2xl">
+            <div class="game-modal-header">
+                <h3 id="ledger-title">POKER LEDGER</h3>
+                <button data-modal-hide="ledger-modal" class="close-button">X</button>
+            </div>
+            <div class="ledger-tab-nav">
+                <button class="ledger-tab active" data-tab="event-ledger-content">Event Ledger</button>
+                <button class="ledger-tab" data-tab="universal-ledger-content">Universal Ledger</button>
+            </div>
+            <div class="p-4">
+                <div id="event-ledger-content" class="ledger-tab-content active">
+                    <div class="overflow-x-auto">
+                        <table class="ledger-table">
+                            <thead>
+                                <tr>
+                                    <th>Player</th>
+                                    <th>Buy-in</th>
+                                    <th>Cash-out</th>
+                                    <th>Net</th>
+                                </tr>
+                            </thead>
+                            <tbody id="event-ledger-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="universal-ledger-content" class="ledger-tab-content">
+                     <div class="overflow-x-auto">
+                        <table class="ledger-table">
+                            <thead>
+                                <tr>
+                                    <th>Player</th>
+                                    <th>Total Buy-in</th>
+                                    <th>Total Cash-out</th>
+                                    <th>Total Net</th>
+                                </tr>
+                            </thead>
+                            <tbody id="universal-ledger-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
