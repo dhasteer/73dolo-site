@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 # Import the game-specific logic
 import housewarming_game
@@ -36,7 +37,8 @@ def home():
     """
     Renders the main home page, sorting events into upcoming and past.
     """
-    today = datetime.now()
+    pacific_tz = ZoneInfo("America/Los_Angeles")
+    pacific_time = datetime.now(pacific_tz)
     upcoming_events = []
     past_events = []
     date_format = "%B %d, %Y"
@@ -44,7 +46,7 @@ def home():
     for event in events:
         try:
             event_date = datetime.strptime(event['date'], date_format)
-            if event_date.date() < today.date():
+            if event_date.date() < pacific_time.date():
                 past_events.append(event)
             else:
                 upcoming_events.append(event)
