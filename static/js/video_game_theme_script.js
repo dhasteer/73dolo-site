@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize all modals
     setupModal('lookup-modal');
     setupModal('ledger-modal');
+    setupModal('halloween-modal');
 
     // --- Poker Ledger Modal Logic ---
     const ledgerModal = document.getElementById('ledger-modal');
