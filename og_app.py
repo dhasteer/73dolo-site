@@ -30,6 +30,14 @@ events = [
         "unique_id": "poker-2025-08-23" # Unique ID for this specific poker night
     },
     {
+        "title": "WWM Poker Night",
+        "date": "November 15, 2025",
+        "description": "An evening of poker, drinks, and conversation. Buy in for $20.",
+        "image_url": "https://cdn-origin.pokerstrategy.com/2021/09/29/6u699mz6nhp71.jpeg",
+        "lookup_item": "",
+        "unique_id": "poker-2025-11-15" # Unique ID for this specific poker night
+    },
+    {
         "title": "Halloween Party",
         "date": "October 31, 2025",
         "description": "Spirits and spirits! Costume contest! Piñata!",
