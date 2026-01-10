@@ -41,7 +41,7 @@ events = [
         "title": "WWM Poker Night",
         "date": "January 10, 2026",
         "description": "An evening of poker, drinks, and conversation. Buy in for $20.",
-        "image_url": "https://pgt.pokergomedia.com/cdn-cgi/image/fit=contain,width=1280,quality=65/2019/12/dd51c1dc-3jbevg.jpg",
+        "image_url": "https://media1.tenor.com/m/DdAeHGzMtIYAAAAC/all-in-poker.gif",
         "lookup_item": "",
         "unique_id": "poker-2026-01-10" # Unique ID for this specific poker night
     },
