@@ -46,6 +46,14 @@ events = [
         "unique_id": "poker-2026-01-10" # Unique ID for this specific poker night
     },
     {
+        "title": "WWM Poker Night",
+        "date": "February 27, 2026",
+        "description": "An evening of poker, drinks, and conversation. Buy in for $20.",
+        "image_url": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWt5cmZlOHB3eW94ams4OTdzcTRzdnJjZnE0YXQ0cG12Y2RsbGhtOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4RveNe6mauoBW/giphy.gif",
+        "lookup_item": "",
+        "unique_id": "poker-2026-02-27" # Unique ID for this specific poker night
+    },
+    {
         "title": "Halloween Party",
         "date": "October 31, 2025",
         "description": "Spirits and spirits! Costume contest! Piñata!",
@@ -113,7 +121,8 @@ def get_all_ledgers():
     API endpoint to get the universal ledger.
     Calls the logic from the poker_game module.
     """
-    universal_ledger_data = poker_game.get_universal_ledger()
+    up_to_event_id = request.args.get('up_to')
+    universal_ledger_data = poker_game.get_universal_ledger(up_to_event_id)
     return jsonify(universal_ledger_data)
 
 # --- API Routes for Halloween Voting ---

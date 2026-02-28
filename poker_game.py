@@ -29,7 +29,7 @@ poker_ledgers = {
             {"player": "mc", "buy_in": 40, "cash_out": 62.20, "net": 22.20},
             {"player": "ch", "buy_in": 20, "cash_out": 20.20, "net": 0.20},
             {"player": "bg", "buy_in": 20, "cash_out": 45.20, "net": 25.20},
-            {"player": "pk", "buy_in": 60, "cash_out": 34.70, "net": -25.30}
+            {"player": "pka", "buy_in": 60, "cash_out": 34.70, "net": -25.30}
         ]
     },
     "poker-2026-01-10": {
@@ -44,6 +44,21 @@ poker_ledgers = {
             {"player": "sm", "buy_in": 20, "cash_out": 9, "net": -11},
             {"player": "bm", "buy_in": 20, "cash_out": 20.75, "net": 0.75},
             {"player": "cd", "buy_in": 20, "cash_out": 37.25, "net": 17.25}
+        ]
+    },
+    "poker-2026-02-27": {
+        "title": "WWM Poker Night (Feb 27)",
+        "entries": [
+            {"player": "ws", "buy_in": 40, "cash_out": 0, "net": -40},
+            {"player": "rl", "buy_in": 20, "cash_out": 34.70, "net": 14.70},
+            {"player": "mc", "buy_in": 20, "cash_out": 43.10, "net": 23.10},
+            {"player": "ky", "buy_in": 20, "cash_out": 98.40, "net": 78.40},
+            {"player": "pke", "buy_in": 20, "cash_out": 54.90, "net": 34.90},
+            {"player": "bm", "buy_in": 40, "cash_out": 0, "net": -40},
+            {"player": "vb", "buy_in": 40, "cash_out": 38.60, "net": -1.40},
+            {"player": "hc", "buy_in": 20, "cash_out": 0, "net": -20},
+            {"player": "bg", "buy_in": 20, "cash_out": 0, "net": -20},
+            {"player": "dh", "buy_in": 40, "cash_out": 10.30, "net": -29.70}
         ]
     },
     # --- Add future poker night ledgers here ---
@@ -61,15 +76,24 @@ def get_event_ledger(event_id):
         ledger['entries'] = sorted(ledger['entries'], key=lambda x: x['net'], reverse=True)
     return ledger
 
-def get_universal_ledger():
+def get_universal_ledger(up_to_event_id=None):
     """
     Combines all ledger entries into a single, consolidated universal ledger.
+    If up_to_event_id is provided, only includes games up to and including that event.
     """
     all_entries = []
-    for event_id, data in poker_ledgers.items():
+    
+    # Sort event IDs to ensure chronological order
+    sorted_event_ids = sorted(list(poker_ledgers.keys()))
+    
+    for event_id in sorted_event_ids:
+        data = poker_ledgers[event_id]
         for entry in data.get('entries', []):
             event_date = datetime.strptime(event_id.replace("poker-", ""), "%Y-%m-%d").strftime("%b %d, %Y")
             all_entries.append({**entry, "event": event_date})
+            
+        if up_to_event_id and event_id == up_to_event_id:
+            break
 
     # Consolidate player stats across all games
     player_summary = {}
@@ -83,7 +107,12 @@ def get_universal_ledger():
 
     # Convert dictionary to a list of entries for easy rendering
     summary_entries = [
-        {"player": p, "buy_in": d['buy_in'], "cash_out": d['cash_out'], "net": d['net']}
+        {
+            "player": p, 
+            "buy_in": round(d['buy_in'], 2), 
+            "cash_out": round(d['cash_out'], 2), 
+            "net": round(d['net'], 2)
+        }
         for p, d in player_summary.items()
     ]
 

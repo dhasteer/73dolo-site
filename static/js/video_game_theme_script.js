@@ -70,14 +70,16 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (data.entries && data.entries.length > 0) {
             data.entries.forEach(entry => {
-                const net = entry.net;
-                const netSign = net > 0 ? '+' : '';
+                const buyIn = entry.buy_in.toFixed(2);
+                const cashOut = entry.cash_out.toFixed(2);
+                const net = entry.net.toFixed(2);
+                const netSign = entry.net > 0 ? '+' : '';
                 const row = `
                     <tr>
                         <td>${entry.player}</td>
-                        <td>$${entry.buy_in}</td>
-                        <td>$${entry.cash_out}</td>
-                        <td>${netSign}$${net}</td>
+                        <td>$${buyIn}</td>
+                        <td>$${cashOut}</td>
+                        <td class="${entry.net >= 0 ? 'text-green-400' : 'text-red-400'}">${netSign}$${net}</td>
                     </tr>
                 `;
                 tableBody.insertAdjacentHTML('beforeend', row);
@@ -95,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Fetch both event and universal ledgers simultaneously
         const eventLedgerPromise = fetch(`/ledger/${eventId}`).then(res => res.json());
-        const universalLedgerPromise = fetch('/ledger/all').then(res => res.json());
+        const universalLedgerPromise = fetch(`/ledger/all?up_to=${eventId}`).then(res => res.json());
 
         try {
             const [eventData, universalData] = await Promise.all([eventLedgerPromise, universalLedgerPromise]);
