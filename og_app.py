@@ -54,6 +54,14 @@ events = [
         "unique_id": "poker-2026-02-27" # Unique ID for this specific poker night
     },
     {
+        "title": "WWM Poker Night",
+        "date": "April 25, 2026",
+        "description": "An evening of poker, drinks, and conversation. Buy in for $20.",
+        "image_url": "https://media1.tenor.com/m/aiHuleZkUYMAAAAd/poker-cards.gif",
+        "lookup_item": "",
+        "unique_id": "poker-2026-04-25" # Unique ID for this specific poker night
+    },
+    {
         "title": "Halloween Party",
         "date": "October 31, 2025",
         "description": "Spirits and spirits! Costume contest! Piñata!",

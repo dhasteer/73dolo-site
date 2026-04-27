@@ -61,6 +61,19 @@ poker_ledgers = {
             {"player": "dh", "buy_in": 40, "cash_out": 10.30, "net": -29.70}
         ]
     },
+    "poker-2026-04-25": {
+        "title": "WWM Poker Night (Apr 25)",
+        "entries": [
+            {"player": "dh", "buy_in": 20, "cash_out": 82.40, "net": 62.40},
+            {"player": "rl", "buy_in": 20, "cash_out": 78.20, "net": 58.20},
+            {"player": "mc", "buy_in": 20, "cash_out": 51.80, "net": 31.80},
+            {"player": "bm", "buy_in": 20, "cash_out": 47.60, "net": 27.60},
+            {"player": "gb", "buy_in": 20, "cash_out": 0, "net": -20.00},
+            {"player": "el", "buy_in": 20, "cash_out": 0, "net": -20.00},
+            {"player": "ch", "buy_in": 40, "cash_out": 0, "net": -40.00},
+            {"player": "bg", "buy_in": 100, "cash_out": 0, "net": -100.00}
+        ]
+    },
     # --- Add future poker night ledgers here ---
     # "poker-2025-09-20": { ... }
 }
