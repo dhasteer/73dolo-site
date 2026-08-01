@@ -79,9 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             unique_id: "spritzes-slices-2026-05-16",
-            title: "Rooftop Spritzes & Slices",
+            title: "Spritzes & Slices",
             date: "May 16, 2026",
-            description: "An afternoon on the rooftop featuring wood-fired pizza slices, chilled Aperol spritzes, and city views.",
+            description: "An afternoon on the rooftop featuring wood-fired pizza slices, chilled spritzes, and city views.",
             image_url: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80",
             lookup_item: ""
         }
