@@ -78,6 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
             lookup_item: ""
         },
         {
+            unique_id: "mosaic-coasters-2026-04-04",
+            title: "Mosaic Coaster Craft Night",
+            date: "April 4, 2026",
+            description: "A creative evening making mosaic coasters together. Good hands, good company.",
+            image_url: "https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?auto=format&fit=crop&w=1200&q=80",
+            lookup_item: ""
+        },
+        {
             unique_id: "spritzes-slices-2026-05-16",
             title: "Spritzes & Slices",
             date: "May 16, 2026",
