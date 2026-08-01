@@ -76,6 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "An evening of poker, drinks, and conversation. Buy in for $20.",
             image_url: "https://media1.tenor.com/m/mMZn6A2aYsQAAAAC/%D0%B1%D0%BB%D0%B5%D0%BA%D0%B4%D0%B6%D0%B5%D0%BA-blackjack.gif",
             lookup_item: ""
+        },
+        {
+            unique_id: "spritzes-slices-2026-05-16",
+            title: "Rooftop Spritzes & Slices",
+            date: "May 16, 2026",
+            description: "An afternoon on the rooftop featuring wood-fired pizza slices, chilled Aperol spritzes, and city views.",
+            image_url: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80",
+            lookup_item: ""
         }
     ];
 
