@@ -369,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Delegate open clicks for dynamically created elements
         document.body.addEventListener('click', (event) => {
             const targetButton = event.target.closest(`[data-modal-toggle="${modalId}"]`);
-            if (targetButton && modalId !== 'ledger-modal') {
+            if (targetButton && modalId !== 'ledger-modal' && modalId !== 'photos-modal') {
                 showModal();
             }
         });
