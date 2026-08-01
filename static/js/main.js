@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const photosTitle = document.getElementById('photos-modal-title');
             const counter = document.getElementById('photos-counter');
 
-            photosTitle.textContent = title.toUpperCase();
+            photosTitle.textContent = title;
             track.innerHTML = photos.map(src => `
                 <img src="${src}" class="photos-slide" alt="Event photo">
             `).join('');
