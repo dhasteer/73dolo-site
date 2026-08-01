@@ -196,19 +196,3 @@ body {
 .ledger-table tr:nth-child(even) {
     background-color: #3a3a3a;
 }
-
-/* --- Notifications (Flash Messages) --- */
-.game-notification-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-.game-notification {
-    padding: 1rem;
-    border: 3px solid;
-    font-size: 0.8rem;
-}
-.category-success { border-color: #33ff33; background-color: #0c1a0c; color: #33ff33; }
-.category-warning { border-color: #fca311; background-color: #2a2a2a; color: #fca311; }
-.category-error { border-color: #e63946; background-color: #2a2a2a; color: #e63946; }
