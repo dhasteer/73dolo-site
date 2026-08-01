@@ -129,6 +129,26 @@
         </div>
     </div>
     
+    <!-- PHOTOS GALLERY MODAL -->
+    <div id="photos-modal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 z-50 hidden">
+        <div class="game-modal" style="max-width: 700px;">
+            <div class="game-modal-header">
+                <h3 id="photos-modal-title">PHOTOS</h3>
+                <button data-modal-hide="photos-modal" class="close-button">X</button>
+            </div>
+            <div class="photos-carousel">
+                <div class="photos-track-wrapper">
+                    <div id="photos-track" class="photos-track"></div>
+                </div>
+                <div class="photos-controls">
+                    <button id="photos-prev" class="game-button">&#9664;</button>
+                    <span id="photos-counter" class="photos-counter">1 / 1</span>
+                    <button id="photos-next" class="game-button">&#9654;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="static/js/main.js"></script>
 </body>
 </html>

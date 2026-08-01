@@ -83,7 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
             date: "April 4, 2026",
             description: "A creative evening making mosaic coasters together, with homemade dessert and record player tunes setting the vibe.",
             image_url: "https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?auto=format&fit=crop&w=1200&q=80",
-            lookup_item: ""
+            lookup_item: "",
+            photos: ["static/images/mosaic_1.jpg", "static/images/mosaic_2.jpg"]
         },
         {
             unique_id: "spritzes-slices-2026-05-16",
@@ -313,6 +314,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 </button>
             `;
         }
+        if (event.photos && event.photos.length > 0) {
+            actionButtonHTML += `
+                <button data-modal-toggle="photos-modal" data-event-photos='${JSON.stringify(event.photos)}' data-event-title="${event.title}" class="game-button w-full" style="margin-top: 0.5rem;">
+                    View Photos
+                </button>
+            `;
+        }
 
         return `
             <div class="game-card ${isPast ? 'past' : ''}">
@@ -378,6 +386,40 @@ document.addEventListener('DOMContentLoaded', () => {
     setupModal('lookup-modal');
     setupModal('ledger-modal');
     setupModal('halloween-modal');
+    setupModal('photos-modal');
+
+    // --- PHOTO GALLERY LOGIC ---
+    document.body.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-modal-toggle="photos-modal"]');
+        if (btn) {
+            const photos = JSON.parse(btn.dataset.eventPhotos);
+            const title = btn.dataset.eventTitle;
+            const track = document.getElementById('photos-track');
+            const photosTitle = document.getElementById('photos-modal-title');
+            const counter = document.getElementById('photos-counter');
+
+            photosTitle.textContent = title.toUpperCase();
+            track.innerHTML = photos.map(src => `
+                <img src="${src}" class="photos-slide" alt="Event photo">
+            `).join('');
+
+            let current = 0;
+            const total = photos.length;
+
+            function goTo(index) {
+                current = (index + total) % total;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                counter.textContent = `${current + 1} / ${total}`;
+            }
+
+            goTo(0);
+
+            document.getElementById('photos-prev').onclick = () => goTo(current - 1);
+            document.getElementById('photos-next').onclick = () => goTo(current + 1);
+
+            document.getElementById('photos-modal').classList.remove('hidden');
+        }
+    });
 
     // --- ITEM LOOKUP LOGIC ---
     const lookupForm = document.getElementById('lookup-form');

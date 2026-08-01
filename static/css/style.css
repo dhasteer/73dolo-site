@@ -196,3 +196,35 @@ body {
 .ledger-table tr:nth-child(even) {
     background-color: #3a3a3a;
 }
+
+/* --- Photo Gallery Carousel --- */
+.photos-carousel {
+    padding: 1rem;
+}
+.photos-track-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid #4a4a4a;
+    background-color: #000;
+}
+.photos-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+.photos-slide {
+    min-width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+}
+.photos-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+.photos-counter {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: #fca311;
+}
