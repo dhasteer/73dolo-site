@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Mosaic Coaster Craft Night",
             date: "April 4, 2026",
             description: "A creative evening making mosaic coasters together, with homemade dessert and record player tunes setting the vibe.",
-            image_url: "https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?auto=format&fit=crop&w=1200&q=80",
+            image_url: "https://www.artwithaheart.net/wp-content/uploads/2023/10/Mosaic-Coaster.png",
             lookup_item: "",
             photos: ["static/images/mosaic_1.jpg", "static/images/mosaic_2.jpg"]
         },
@@ -92,7 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
             date: "May 16, 2026",
             description: "An afternoon on the rooftop featuring wood-fired pizza slices, chilled spritzes, and city views.",
             image_url: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80",
-            lookup_item: ""
+            lookup_item: "",
+            photos: ["static/images/spritzes_1.jpg", "static/images/spritzes_2.jpg"]
         },
         {
             unique_id: "poker-2026-08-28",
