@@ -93,6 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "An afternoon on the rooftop featuring wood-fired pizza slices, chilled spritzes, and city views.",
             image_url: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80",
             lookup_item: ""
+        },
+        {
+            unique_id: "poker-2026-08-28",
+            title: "WWM Poker Night",
+            date: "August 28, 2026",
+            description: "An evening of poker, drinks, and conversation. Buy in for $20.",
+            image_url: "https://pgt.pokergomedia.com/cdn-cgi/image/fit=contain,width=1280,quality=65/2019/12/dd51c1dc-3jbevg.jpg",
+            lookup_item: ""
         }
     ];
 
@@ -188,6 +196,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 { player: "dh", buy_in: 20, cash_out: 30.00, net: 10.00 },
                 { player: "ky", buy_in: 40, cash_out: 26.70, net: -13.30 },
                 { player: "bm", buy_in: 60, cash_out: 0.00, net: -60.00 }
+            ]
+        },
+        "poker-2026-08-28": {
+            title: "WWM Poker Night (Aug 28)",
+            entries: [
+                { player: "bm", buy_in: 20, cash_out: 56.70, net: 36.70 },
+                { player: "ctv", buy_in: 40, cash_out: 49.90, net: 9.90 },
+                { player: "dh", buy_in: 20, cash_out: 32.70, net: 12.70 },
+                { player: "mz", buy_in: 20, cash_out: 30.70, net: 10.70 },
+                { player: "ws", buy_in: 20, cash_out: 0.00, net: -20.00 },
+                { player: "jr", buy_in: 20, cash_out: 0.00, net: -20.00 },
+                { player: "ss", buy_in: 30, cash_out: 0.00, net: -30.00 }
             ]
         }
     };
