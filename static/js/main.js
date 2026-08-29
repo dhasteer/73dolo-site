@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "WWM Poker Night",
             date: "August 28, 2026",
             description: "An evening of poker, drinks, and conversation. Buy in for $20.",
-            image_url: "https://pgt.pokergomedia.com/cdn-cgi/image/fit=contain,width=1280,quality=65/2019/12/dd51c1dc-3jbevg.jpg",
+            image_url: "https://i.pinimg.com/originals/80/01/21/8001216bc4b14ef5f9446e5cb7a2ab89.gif",
             lookup_item: ""
         }
     ];
