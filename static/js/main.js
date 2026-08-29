@@ -499,7 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ledgerModal = document.getElementById('ledger-modal');
     const ledgerTitle = document.getElementById('ledger-title');
 
-    function populateTable(tableBodyId, entries) {
+    function populateTable(tableBodyId, entries, isUniversal = false) {
         const tableBody = document.getElementById(tableBodyId);
         if (!tableBody) return;
 
@@ -512,18 +512,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 const netSign = entry.net > 0 ? '+' : '';
                 const netClass = entry.net >= 0 ? 'text-green-400' : 'text-red-400';
                 
+                let roiTd = '';
+                if (isUniversal) {
+                    const roiVal = entry.buy_in > 0 ? ((entry.net / entry.buy_in) * 100).toFixed(1) : '0.0';
+                    const roiSign = roiVal > 0 ? '+' : '';
+                    const roiClass = roiVal >= 0 ? 'text-green-400' : 'text-red-400';
+                    roiTd = `<td class="${roiClass}">${roiSign}${roiVal}%</td>`;
+                }
+
                 const row = `
                     <tr>
                         <td>${entry.player}</td>
                         <td>$${buyIn}</td>
                         <td>$${cashOut}</td>
                         <td class="${netClass}">${netSign}$${net}</td>
+                        ${roiTd}
                     </tr>
                 `;
                 tableBody.insertAdjacentHTML('beforeend', row);
             });
         } else {
-            tableBody.innerHTML = '<tr><td colspan="4" class="text-center">NO LEDGER DATA FOUND.</td></tr>';
+            const colSpan = isUniversal ? 5 : 4;
+            tableBody.innerHTML = `<tr><td colspan="${colSpan}" class="text-center">NO LEDGER DATA FOUND.</td></tr>`;
         }
     }
 
@@ -569,7 +579,7 @@ document.addEventListener('DOMContentLoaded', () => {
         populateTable('event-ledger-table-body', eventEntries);
 
         const universalEntries = getUniversalLedger(eventId);
-        populateTable('universal-ledger-table-body', universalEntries);
+        populateTable('universal-ledger-table-body', universalEntries, true);
 
         // Reset to first tab
         const activeTab = document.querySelector('.ledger-tab.active');
