@@ -102,6 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "An evening of poker, drinks, and conversation. Buy in for $20.",
             image_url: "https://i.pinimg.com/originals/80/01/21/8001216bc4b14ef5f9446e5cb7a2ab89.gif",
             lookup_item: ""
+        },
+        {
+            unique_id: "poker-2026-10-02",
+            title: "WWM Poker Night",
+            date: "October 2, 2026",
+            description: "An evening of poker, drinks, and conversation. Buy in for $20.",
+            image_url: "https://media1.tenor.com/m/DdAeHGzMtIYAAAAC/all-in-poker.gif",
+            lookup_item: ""
         }
     ];
 
@@ -210,6 +218,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 { player: "jr", buy_in: 20, cash_out: 0.00, net: -20.00 },
                 { player: "ss", buy_in: 30, cash_out: 0.00, net: -30.00 }
             ]
+        },
+        "poker-2026-10-02": {
+            title: "WWM Poker Night (Oct 2)",
+            entries: [
+                { player: "vb", buy_in: 20, cash_out: 93.70, net: 73.70 },
+                { player: "dh", buy_in: 20, cash_out: 28.30, net: 8.30 },
+                { player: "am", buy_in: 20, cash_out: 21.10, net: 1.10 },
+                { player: "mz", buy_in: 20, cash_out: 16.90, net: -3.10 },
+                { player: "bg", buy_in: 20, cash_out: 0.00, net: -20.00 },
+                { player: "al", buy_in: 20, cash_out: 0.00, net: -20.00 },
+                { player: "bm", buy_in: 40, cash_out: 0.00, net: -40.00 }
+            ]
         }
     };
 
@@ -296,24 +316,6 @@ document.addEventListener('DOMContentLoaded', () => {
         typeHeaderText();
     }
 
-    // --- RENDER EVENTS (Upcoming vs Past Archives) ---
-    const today = new Date();
-
-    const upcomingEvents = [];
-    const pastEvents = [];
-
-    EVENTS.forEach(event => {
-        const eventDate = new Date(event.date);
-        if (isNaN(eventDate.getTime()) || eventDate < today) {
-            pastEvents.push(event);
-        } else {
-            upcomingEvents.push(event);
-        }
-    });
-
-    upcomingEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
-    pastEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
-
     function createCardHTML(event, isPast = false) {
         let actionButtonHTML = '';
         if (event.lookup_item === 'housewarming') {
@@ -359,19 +361,13 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    const upcomingGrid = document.getElementById('upcoming-events-grid');
-    if (upcomingGrid) {
-        if (upcomingEvents.length > 0) {
-            upcomingGrid.innerHTML = upcomingEvents.map(e => createCardHTML(e, false)).join('');
-        } else {
-            upcomingGrid.innerHTML = '<p class="text-center col-span-full">LOADING NEW LEVELS... CHECK BACK SOON!</p>';
-        }
-    }
+    const allEvents = [...EVENTS];
+    allEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const pastGrid = document.getElementById('past-events-grid');
     if (pastGrid) {
-        if (pastEvents.length > 0) {
-            pastGrid.innerHTML = pastEvents.map(e => createCardHTML(e, true)).join('');
+        if (allEvents.length > 0) {
+            pastGrid.innerHTML = allEvents.map(e => createCardHTML(e, true)).join('');
         } else {
             pastGrid.innerHTML = '<p class="text-center col-span-full">NO SAVED DATA.</p>';
         }
