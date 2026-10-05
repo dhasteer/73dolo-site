@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "WWM Poker Night",
             date: "October 2, 2026",
             description: "An evening of poker, drinks, and conversation. Buy in for $20.",
-            image_url: "https://media1.tenor.com/m/DdAeHGzMtIYAAAAC/all-in-poker.gif",
+            image_url: "https://gamblerwins.wordpress.com/wp-content/uploads/2018/03/giphy-1.gif",
             lookup_item: ""
         }
     ];
