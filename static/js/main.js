@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "WWM Poker Night",
             date: "November 6, 2026",
             description: "An evening of poker, drinks, and conversation. Buy in for $20.",
-            image_url: "https://media1.tenor.com/m/aiHuleZkUYMAAAAd/poker-cards.gif",
+            image_url: "https://images.steamusercontent.com/ugc/443984582384541654/880469784D5A20C971EC2C95E2627DC907B3B55E/",
             lookup_item: ""
         }
     ];
