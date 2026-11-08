@@ -110,6 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "An evening of poker, drinks, and conversation. Buy in for $20.",
             image_url: "https://gamblerwins.wordpress.com/wp-content/uploads/2018/03/giphy-1.gif",
             lookup_item: ""
+        },
+        {
+            unique_id: "poker-2026-11-06",
+            title: "WWM Poker Night",
+            date: "November 6, 2026",
+            description: "An evening of poker, drinks, and conversation. Buy in for $20.",
+            image_url: "https://media1.tenor.com/m/aiHuleZkUYMAAAAd/poker-cards.gif",
+            lookup_item: ""
         }
     ];
 
@@ -229,6 +237,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 { player: "bg", buy_in: 20, cash_out: 0.00, net: -20.00 },
                 { player: "al", buy_in: 20, cash_out: 0.00, net: -20.00 },
                 { player: "bm", buy_in: 40, cash_out: 0.00, net: -40.00 }
+            ]
+        },
+        "poker-2026-11-06": {
+            title: "WWM Poker Night (Nov 6)",
+            entries: [
+                { player: "gw", buy_in: 20, cash_out: 47.50, net: 27.50 },
+                { player: "dh", buy_in: 20, cash_out: 36.70, net: 16.70 },
+                { player: "ky", buy_in: 20, cash_out: 16.80, net: -3.20 },
+                { player: "as", buy_in: 40, cash_out: 35.20, net: -4.80 },
+                { player: "am", buy_in: 20, cash_out: 13.90, net: -6.10 },
+                { player: "mz", buy_in: 20, cash_out: 6.90, net: -13.10 },
+                { player: "ar", buy_in: 40, cash_out: 23.00, net: -17.00 }
             ]
         }
     };
